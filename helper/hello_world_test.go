@@ -15,6 +15,19 @@ type test struct {
 	expected string
 }
 
+func BenchmarkSub(b *testing.B) {
+	b.Run("Firly", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			HelloWorld("Firly")
+		}
+	})
+	b.Run("Muhammad", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			HelloWorld("Muhammad")
+		}
+	})
+}
+
 func BenchmarkHelloWorld(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		HelloWorld("Anas")
