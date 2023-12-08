@@ -19,6 +19,17 @@ func TestMain(m *testing.M) {
 	fmt.Println("AFTER UNIT TEST")
 }
 
+func TestSubTest(t *testing.T) {
+	t.Run("Anas", func (t *testing.T)  {
+		result := HelloWorld("Anas")
+		require.Equal(t, "Hello Anas", result, "Result must be 'Hello Anas'")
+	})
+	t.Run("Firly", func (t *testing.T)  {
+		result := HelloWorld("Firly")
+		require.Equal(t, "Hello Firly", result, "Result must be 'Hello Firly'")
+	})
+}
+
 func TestSkip(t *testing.T){
 	if runtime.GOOS == "darwin" {
 		t.Skip("Cannot run on MAC OS")
