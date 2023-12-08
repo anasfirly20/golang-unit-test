@@ -11,3 +11,11 @@ https://github.com/stretchr/testify
 # SubTest
 
 1. go test -v -run TestFunctionName/SubTestName
+
+# Run Benchmark
+
+1. go test -v -bench=. (Unit test will also be run)
+2. go test -v -run=NotMathUnitTest -bench=.
+3. go test -v -run=NotMathUnitTest -bench=BenchmarkTest (run a specific benchmark)
+4. go test -v -bench=. ./... (run from upper folder)
+5. go test -v -run=NotMathUnitTest -bench=. ./... (run from upper folder only benchmark)

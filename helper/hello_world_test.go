@@ -15,6 +15,18 @@ type test struct {
 	expected string
 }
 
+func BenchmarkHelloWorld(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Anas")
+	}
+}
+
+func BenchmarkHelloWorldFirly(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Muhammad")
+	}
+}
+
 func TestTableHelloWorld(t *testing.T) {
 	tests := []test{
 		{
